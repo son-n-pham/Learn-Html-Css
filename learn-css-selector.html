@@ -6,13 +6,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Learn CSS Selector</title>
 	<style>
-		li.red ~ li {
+		[data-red$="3"]{
 			background: red;
+			margin: 50px;
+		}
+
+		:is(div:nth-of-type(3), span) :hover::before{
+			background: green;
+			color: orange;
+			content:"BEFORE"
+		}
+
+		a[href="##"] {
+			color: yellow;
 		}
 	</style>
 </head>
 <body>
-	<div class="red">This is a div</div>
+	<input disabled type="checkbox">
+	<div class="red" data-red="123">This is a div</div>
 	<span id="blue">This is a span</span>
 	<div>
 		<span>
@@ -25,5 +37,15 @@
 		<li>Item 3</li>
 		<li>Item 4</li>
 	</ul>
+	<div>
+		<div>
+			<p>
+				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, impedit?
+			</p>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio voluptates porro alias iste dolorem accusamus recusandae ipsa eligendi tempora illum?</p>
+		</div>
+	</div>
+	<a href="#">It is a tag</a>
+	<a href="##">It is another tag</a>
 </body>
 </html>
